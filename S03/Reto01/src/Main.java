@@ -1,0 +1,33 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        // Crear un pasajero
+        Pasajero pasajero = new Pasajero("Arath Lopez", "PA012345");
+
+        // Crear un vuelo
+        Vuelo vuelo = new Vuelo("UX123", "París", "14:30");
+
+        // Reservar asiento
+        boolean reservado = vuelo.reservarAsiento(pasajero);
+        if (reservado) {
+            System.out.println("Reserva realizada con éxito.\n");
+        } else {
+            System.out.println("No se pudo realizar la reserva.\n");
+        }
+
+        // Mostrar itinerario
+        System.out.println(vuelo.obtenerItinerario());
+
+        // Cancelar reserva
+        System.out.println("Cancelando reserva...\n");
+        vuelo.cancelarReserva();
+
+        // Mostrar itinerario actualizado
+        System.out.println(vuelo.obtenerItinerario());
+
+        // Realizamos una nueva reservacion
+        vuelo.reservarAsiento("Enrique Duran", "PE995756");
+        System.out.println(vuelo.obtenerItinerario());
+    }
+}
